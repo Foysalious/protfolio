@@ -6,6 +6,7 @@ use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\messageController;
+use App\Http\Controllers\ProfileController;
 
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProtfolioController;
@@ -71,4 +72,10 @@ Route::group(['prefix' => 'message'], function () {
     Route::post('/store', [messageController::class, 'store'])->name('messageStore');
     Route::post('/update/{message:id}', [messageController::class, 'update'])->name('messageUpdate');
     Route::post('/delete/{message:id}', [messageController::class, 'destroy'])->name('messageDelete');
+});
+Route::group(['prefix' => 'my-profile'], function(){
+    Route::get('/{user:id}',[ProfileController::class, 'edit'])->name('profile.edit');
+    Route::post('/update/{user:id}',[ProfileController::class,'update'])->name('profile.update');
+    Route::post('/update-password/{user:id}',[ProfileController::class,'updatePassword'])->name('password.update');
+    Route::post('/delete-profile/{user:id}',[ProfileController::class,'destroy'])->name('profile.delete');
 });

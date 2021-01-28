@@ -28,7 +28,7 @@
                             <div class="profile-dropdown">
                                 <ul>
                                     <li>
-                                        <a href="">My Profile</a>
+                                        <a href="{{ route('profile.edit', Auth::user()->id ) }}">My Profile</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
