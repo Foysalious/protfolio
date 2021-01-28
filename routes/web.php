@@ -5,6 +5,7 @@ use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\messageController;
 
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProtfolioController;
